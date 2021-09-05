@@ -3,9 +3,9 @@ import Log from "../util/Log";
 
 const ready: Listener<"ready"> = {
     event: "ready",
-    procedure: function (): void {
+    procedure(): void {
         Log.info("Bot started 👀");
     }
-}
+};
 
 export default ready;

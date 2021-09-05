@@ -5,7 +5,7 @@ const echo: Command = {
     name: "echo",
     description: "Repeats a message",
     usage: "echo <message>?",
-    procedure: async (client: Client, message: Message, args: string[]) => {
+    async procedure(client: Client, message: Message, args: string[]): Promise<Message> {
         let reply;
         if (args.length > 0) {
             reply = args.join(" ");
