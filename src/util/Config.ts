@@ -10,7 +10,7 @@ const config = {
     [ConfigKey.botToken]: process.env.BOT_TOKEN,
 };
 
-export const getConfig = (key: ConfigKey): number | string | boolean => {
+export const getConfig = (key: ConfigKey): typeof config[ConfigKey] => {
     if (config[key] !== null && config[key] !== undefined) {
         return config[key];
     } else {

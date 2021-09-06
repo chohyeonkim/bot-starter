@@ -6,5 +6,5 @@ startDiscord({
     commandDirectory: `${__dirname}/commands`,
     listenerDirectory: `${__dirname}/listeners`,
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
-    token: String(getConfig(ConfigKey.botToken)),
+    token: getConfig(ConfigKey.botToken),
 });
