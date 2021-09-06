@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
+import {Log} from "@ubccpsc310/bot-base";
 dotenv.config();
-import Log from "./Log";
 
 export enum ConfigKey {
     botToken = "botToken",
