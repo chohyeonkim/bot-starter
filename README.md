@@ -1,3 +1,10 @@
+# Original Code From Braxton Hall (Thank you Braxton!)
+We realized too late that we need to update the node version, so this project is a 
+hodgepodge of [bot-starter](https://github.com/braxtonhall/bot-starter) and [bot-base](https://github.com/braxtonhall/bot-base).
+
+We will be opening PRs to update the version in the original repo, but since C3 starts
+in less than 24 hours, this is our solution for 2022W Term 2.
+
 # CPSC 310 Discord ⊥ (`\bot`) Starter Code
 
 All PRs merged to main go live instantly!

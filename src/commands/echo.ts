@@ -1,4 +1,4 @@
-import {Command} from "@ubccpsc310/bot-base";
+import {Command} from "../bot-base";
 import {Client, Message} from "discord.js";
 
 const echo: Command = {

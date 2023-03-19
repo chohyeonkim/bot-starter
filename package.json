@@ -4,15 +4,16 @@
   "main": "dist/index.js",
   "license": "MIT",
   "engines": {
-    "node": ">= 16 < 17"
+    "node": ">= 18 < 19"
   },
   "dependencies": {
-    "@ubccpsc310/bot-base": "^1.0.8",
     "discord.js": "^13.1.0",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "nedb": "^1.8.0"
   },
   "devDependencies": {
-    "@tsconfig/node14": "^1.0.1",
+    "@tsconfig/node18": "1.0.1",
+    "@types/nedb": "^1.8.11",
     "@types/dotenv": "^8.2.0",
     "@types/node": "^16.7.10",
     "@typescript-eslint/eslint-plugin": "^4.4.1",

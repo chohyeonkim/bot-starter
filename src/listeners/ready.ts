@@ -1,4 +1,4 @@
-import {Listener, Log} from "@ubccpsc310/bot-base";
+import {Listener, Log} from "../bot-base";
 
 const ready: Listener<"ready"> = {
     event: "ready",
