@@ -13,21 +13,17 @@ const removeDataset: Command = {
 		const [id] = args;
 
 		try {
-			// const res = await fetch(`http://localhost:4321/dataset/${id}`, {
-			// 	method: "DELETE"
-			// });
 
-			const res = await fetch(`https://ba1d319a-716a-4259-93df-aab84bea679f.mock.pstmn.io/dataset/remove`, {
+			const res = await fetch(`http://localhost:4321/dataset/${id}`, {
 				method: "DELETE"
 			});
 
 			const resJson = await res.json();
-			console.log(res.ok);
 
 			if (!res.ok) {
-				return message.reply(`Failed to remove dataset ${id}: ${resJson["error"]}}`);
+				return message.reply(`Failed to remove dataset ${id}: ${resJson["error"]}`);
 			} else {
-				return message.reply(`Dataset ${id} removed successfully: ${resJson["result"]}`);
+				return message.reply(`Dataset ${id} removed successfully`);
 			}
 		} catch (err) {
 			return message.reply(`Error: ${err.message}`);

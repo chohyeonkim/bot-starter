@@ -1,27 +1,28 @@
-import { Client, Message } from "discord.js";
 import {Command} from "../bot-base";
+import {Client, Message} from "discord.js";
 import fetch from "node-fetch";
-
 const listDataset: Command = {
 	name: "listDataset",
-	description: "List all datasets added to the server",
+	description: "a list of datasets that were added.",
 	usage: "listDataset",
-	async procedure(client: Client, message: Message) {
-		try {
-			const response = await fetch("http://localhost:4321/datasets");
-			const data = await response.json();
-			const datasets = data["result"];
+	async procedure(client: Client, message: Message, args: string[]): Promise<Message> {
 
-			if (datasets.length === 0) {
-				return message.reply("No datasets found");
+		try {
+			const res = await fetch("http://localhost:4321/datasets");
+
+			const resJson = await res.json();
+			const arr = resJson["result"];
+
+			if (arr.length === 0) {
+				return message.reply("Data has not been added yet");
 			}
 
-			const datasetList = datasets.map(dataset => dataset.id).join("\n");
+			const datasetList = arr.map(dataset =>
+				`DataId: ${dataset.id}, Kind: ${dataset.kind}, Size: ${dataset.numRows}`).join("\n");
 
-			return message.reply(`List of datasets:\n${datasetList}`);
-		} catch (error) {
-			console.error(error);
-			return message.reply(`Error: ${error.message}`);
+			return message.reply(datasetList);
+		} catch(err) {
+			return message.reply(`Error: ${err.message}`);
 		}
 	},
 };
